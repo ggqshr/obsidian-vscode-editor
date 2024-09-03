@@ -74,6 +74,13 @@ export default class CodeFilesPlugin extends Plugin {
 				new CreateCodeFileModal(this).open();
 			}
 		});
+		this.addCommand({
+			id: "open",
+			name:"Edit Code Block in Vscode",
+			callback:()=>{
+				FenceEditModal.openOnCurrentCode(this);
+			}
+		})
 
 		this.registerEvent(
 			this.app.workspace.on("editor-menu", (menu) => {
